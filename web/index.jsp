@@ -53,34 +53,34 @@
                     <option value="darkGray" style="font-weight:bold; color:#696969;">dark gray</option>
                     <option value="black" style="font-weight:bold; color:black;">black</option>
                 </select></p>
-				
-				<br>
-				<p><label for="shape">Choose a shape:</label></p>
-				<p>	Rectangle: <input id="RECT" type="radio" name="shape" value="RECT"/>
-					Rounded Rectangle: <input id="ROUNDRECT" type="radio" name="shape" value="ROUNDRECT"/>
-					Oval: <input id="OVAL" type="radio" name="shape" value="OVAL"/></p>
 
-				<p><label for="x">Enter desired shape width:</label>
-				<input type="text" name="x" value="${Parameters.getStringX()}" /></p>
-				<p><label for="y">Enter desired shape height:</label>
-				<input type="text" name="y" value="${Parameters.getStringY()}" /></p>		
-				
-				
-				<aside style="float:right; width:35%;">
-					<p id="error">
-					<textarea id="errorMessage" rows="7" cols="50"> </textarea>
-					</p>
-				</aside>
-				
-				<br>
-				<p><label for="fstyle">Choose a font style:</label></p>
-				<p><label for="plain">Plain:</label> <input id="REGULAR" type="radio" name="fstyle" value="REGULAR"/>
-					<label for="bold" style="font-weight:bold">Bold:</label><input id="BOLD" type="radio" name="fstyle" value="BOLD"/>
-					<label for="italic" style="font-style:italic;">Italic:</label> <input id="ITALIC" type="radio" name="fstyle" value="ITALIC"/>
-					<label for="bold italic" style="font-weight:bold; font-style:italic;">Bold Italic:</label> <input id="BOLD ITALIC" type="radio" name="fstyle" value="BOLD ITALIC"/></p>
+                        <br>
+                        <p><label for="shape">Choose a shape:</label></p>
+                        <p>	Rectangle: <input id="RECT" type="radio" name="shape" value="RECT"/>
+                                Rounded Rectangle: <input id="ROUNDRECT" type="radio" name="shape" value="ROUNDRECT"/>
+                                Oval: <input id="OVAL" type="radio" name="shape" value="OVAL"/></p>
 
-				<p><label for="ftsize">Enter desired font size:</label>
-				<input type="text" name="ftsize" value="${Parameters.getFtsizeString()}" /></p>				
+                        <p><label for="x">Enter desired shape width:</label>
+                        <input type="text" name="x" value="${Parameters.getStringX()}" /></p>
+                        <p><label for="y">Enter desired shape height:</label>
+                        <input type="text" name="y" value="${Parameters.getStringY()}" /></p>		
+
+
+                        <aside style="float:right; width:35%;">
+                                <p id="error">
+                                <textarea id="errorMessage" rows="7" cols="50"> </textarea>
+                                </p>
+                        </aside>
+
+                        <br>
+                        <p><label for="fstyle">Choose a font style:</label></p>
+                        <p><label for="plain">Plain:</label> <input id="REGULAR" type="radio" name="fstyle" value="REGULAR"/>
+                                <label for="bold" style="font-weight:bold">Bold:</label><input id="BOLD" type="radio" name="fstyle" value="BOLD"/>
+                                <label for="italic" style="font-style:italic;">Italic:</label> <input id="ITALIC" type="radio" name="fstyle" value="ITALIC"/>
+                                <label for="bold italic" style="font-weight:bold; font-style:italic;">Bold Italic:</label> <input id="BOLD ITALIC" type="radio" name="fstyle" value="BOLD ITALIC"/></p>
+
+                        <p><label for="ftsize">Enter desired font size:</label>
+                        <input type="text" name="ftsize" value="${Parameters.getFtsizeString()}" /></p>				
 
                 <p><input type="submit" value="Generate Badge" name="submit" /></p>
 
@@ -136,7 +136,7 @@
                 function setError(errorMessage){
                     document.getElementById("errorMessage").value = errorMessage;
                 }
-            </script>
+           </script>
             <script>
                 document.getElementById("${Parameters.getFtstyle()}").checked = true;
             </script>
