@@ -132,12 +132,13 @@
                 bgcolors.value = "${Parameters.getBgcolor()}";
                 
                 document.getElementById("${Parameters.getShape()}").checked = true;
-                
-                document.getElementById("${Parameters.getFtstyle()}").checked = true;
-                
+                              
                 function setError(errorMessage){
                     document.getElementById("errorMessage").value = errorMessage;
                 }
+            </script>
+            <script>
+                document.getElementById("${Parameters.getFtstyle()}").checked = true;
             </script>
         </c:if>
     </body>
