@@ -53,6 +53,7 @@ public class BadgeServlet extends HttpServlet {
         p.setStringY(y);
         p.setFtstyle(fstyle);
         p.setFtsizeString(ftsize);
+        p.setIsActive(true);
         
 //        try (PrintWriter out = response.getWriter()) {
 //            /* TODO output your page here. You may use following sample code. */

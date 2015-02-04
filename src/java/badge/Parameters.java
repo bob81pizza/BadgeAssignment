@@ -19,6 +19,7 @@ public class Parameters {
 	private String stringY;
 	private String ftstyle;
 	private String ftsizeString;
+        private Boolean isActive;
 
     /**
      * @return the name
@@ -130,5 +131,19 @@ public class Parameters {
      */
     public void setFtsizeString(String ftsizeString) {
         this.ftsizeString = ftsizeString;
+    }
+
+    /**
+     * @return the isActive
+     */
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    /**
+     * @param isActive the isActive to set
+     */
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 }
