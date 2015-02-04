@@ -54,23 +54,7 @@ public class BadgeServlet extends HttpServlet {
         p.setFtstyle(fstyle);
         p.setFtsizeString(ftsize);
         p.setIsActive(true);
-        
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet BadgeServlet</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<p> name: " + p.getName()+ "</p>");
-//            out.println("<p> bgcolor: " + p.getBgcolor()+ "</p>");
-//            out.println("<p> shape: " + p.getShape()+ "</p>");
-//            out.println("<p> ftsizeString: " + p.getFtsizeString()+ "</p>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-        
+               
         HttpSession session = request.getSession();
         session.setAttribute("Parameters", p);
 
