@@ -1,11 +1,19 @@
 body {
-background-color: #B0C4DE; 
-color: #000;
-font-family: Tahoma, sans-serif;
-border-style: solid;
-border-color: #58626F;
-border-radius: 25px;
-padding: 10px 10px 10px 10px;
+    background-color: #B0C4DE;
+    color: #000;
+    font-family: Tahoma, sans-serif;
+    border-style: solid;
+    border-color: #58626F;
+    border-radius: 25px;
+    padding: 10px 10px 10px 10px;
+}
+
+input[type="text"]{
+
+    width: 200px;
+    text-align: right;
+    margin-right: 0.5em;
+    white-space: nowrap;
 }
 
 
