@@ -1,3 +1,5 @@
+<!--Chris Martin and Maggie Shipley-->
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -100,7 +102,7 @@
 
         
         <c:if test="${Parameters.getIsActive()}">
-        <applet code="org.badge.applet.BadgeApplet" archive="BadgeApplet.jar" width="250" height="100">
+        <applet code="org.badge.applet.BadgeApplet" archive="BadgeApplet.jar" width="300" height="250">
             <c:if test="${not empty Parameters.getName()}">
                 <param name="NAME" value="${Parameters.getName()}" />                
             </c:if>
