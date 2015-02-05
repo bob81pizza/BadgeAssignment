@@ -9,15 +9,13 @@
         <title></title>
     </head>
     <body>
-        <div id="contentWrapper">
-        <h1 id="title">Badge Generator</h1>
+
+             <div id="contentWrapper">
+	    <h1 id="title">Badge Generator</h1>
             <form id="badgeForm" name="badgeForm" action="BadgeServlet" method="POST">
 
-				<aside style="float:right; width:35%;">
-				
-				</aside>
+				<p><label for="name">Enter your name:</label>
 
-                <p><label for="name">Enter your name:</label>
 				<input type="text" name="name" value="${Parameters.getName()}"/></p>
 
                 <p><label for="textcolors">Select a text & shape color:</label>
@@ -37,8 +35,16 @@
                     <option value="black" style="font-weight:bold; color:black;">black</option>
                 </select></p>
 
+
+				<div id="badge">
+						<aside style="float:right; width:50%;">
+						<p>Badge:</p>
+						</aside>
+				</div>
 				<p><label for="bgcolors">Select a background color:</label>
-                <select id="bgcolors" name="bgcolors">                
+
+                <select id="bgcolors" name="bgcolors">
+
                     <option value="red" style="font-weight:bold; color:red;">red</option>
                     <option value="orange" style="font-weight:bold; color:orange;">orange</option>
                     <option value="yellow" style=" font-weight:bold; color:yellow;">yellow</option>
@@ -54,6 +60,8 @@
                     <option value="black" style="font-weight:bold; color:black;">black</option>
                 </select></p>
 
+
+
                         <br>
                         <p><label for="shape">Choose a shape:</label></p>
                         <p>	Rectangle: <input id="RECT" type="radio" name="shape" value="RECT"/>
@@ -61,16 +69,20 @@
                                 Oval: <input id="OVAL" type="radio" name="shape" value="OVAL"/></p>
 
                         <p><label for="x">Enter desired shape width:</label>
-                        <input type="text" name="x" value="${Parameters.getStringX()}" /></p>
+                        <input type="number" min="1" name="x" value="${Parameters.getStringX()}" /></p>
                         <p><label for="y">Enter desired shape height:</label>
-                        <input type="text" name="y" value="${Parameters.getStringY()}" /></p>		
+                        <input type="number" min="1" name="y" value="${Parameters.getStringY()}" /></p>
 
 
-                        <aside style="float:right; width:35%;">
-                                <p id="error">
+			<div id="right">
+
+			<aside style="float:right; width:50%;">
+                        <p id="error>
+                            <p><label for="error">Error Message:</label></p>
                                 <textarea id="errorMessage" rows="7" cols="50"> </textarea>
-                                </p>
+                        </p>
                         </aside>
+			</div>
 
                         <br>
                         <p><label for="fstyle">Choose a font style:</label></p>
@@ -80,13 +92,12 @@
                                 <label for="bold italic" style="font-weight:bold; font-style:italic;">Bold Italic:</label> <input id="BOLD ITALIC" type="radio" name="fstyle" value="BOLD ITALIC"/></p>
 
                         <p><label for="ftsize">Enter desired font size:</label>
-                        <input type="text" name="ftsize" value="${Parameters.getFtsizeString()}" /></p>				
+                        <input type="number" min="1" name="ftsize" value="${Parameters.getFtsizeString()}" /></p>
 
                 <p><input type="submit" value="Generate Badge" name="submit" /></p>
-
-            </form>
-
+			    </form>
         </div>
+
         
         <c:if test="${Parameters.getIsActive()}">
         <applet code="org.badge.applet.BadgeApplet" archive="BadgeApplet.jar" width="250" height="100">
@@ -106,6 +117,7 @@
                 <param name="BGCOLOR" value ="${Parameters.getBgcolor()}" />
             </c:if>
                 
+
             <c:if test="${not empty Parameters.getStringX()}">
                 <param name="X" value ="${Parameters.getStringX()}" />
             </c:if>
@@ -113,26 +125,27 @@
             <c:if test="${not empty Parameters.getStringY()}">
                 <param name="Y" value="${Parameters.getStringY()}" />
             </c:if>
-            
+
             <c:if test="${not empty Parameters.getFtstyle()}">
                 <param name="FTSTYLE" value="${Parameters.getFtstyle()}" />
             </c:if>
-                    
+
             <c:if test="${not empty Parameters.getFtsizeString()}">
                 <param name="FTSIZE" value="${Parameters.getFtsizeString()}" />
             </c:if>
-                    
+
         </applet>
-            
+
             <script>
                 var textcolors = document.getElementById('textcolors');
                 textcolors.value = "${Parameters.getColorString()}";
-                
+
                 var bgcolors = document.getElementById('bgcolors');
                 bgcolors.value = "${Parameters.getBgcolor()}";
-                
+
                 document.getElementById("${Parameters.getShape()}").checked = true;
-                              
+
+
                 function setError(errorMessage){
                     document.getElementById("errorMessage").value = errorMessage;
                 }
