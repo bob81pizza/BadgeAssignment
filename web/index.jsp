@@ -11,95 +11,88 @@
         <title></title>
     </head>
     <body>
+        <div id="contentWrapper">
+       <h1 id="title">Badge Generator</h1>
+       <form id="badgeForm" name="badgeForm" action="BadgeServlet" method="POST">
 
-             <div id="contentWrapper">
-	    <h1 id="title">Badge Generator</h1>
-            <form id="badgeForm" name="badgeForm" action="BadgeServlet" method="POST">
+                           <p><label for="name">Enter your name:</label>
 
-				<p><label for="name">Enter your name:</label>
+                           <input type="text" name="name" value="${Parameters.getName()}"/></p>
+           <p><label for="textcolors">Select a text & shape color:</label>
+           <select id="textcolors" name="textcolors">
+               <option value="red" style="font-weight:bold; color:red;">red</option>
+               <option value="orange" style="font-weight:bold; color:orange;">orange</option>
+               <option value="yellow" style=" font-weight:bold; color:yellow;">yellow</option>
+               <option value="green" style="font-weight:bold; color:green;">green</option>
+               <option value="cyan" style="font-weight:bold; color:cyan;">cyan</option>
+               <option value="blue" style="font-weight:bold; color:blue;">blue</option>
+               <option value="magenta" style="font-weight:bold; color:magenta;">magenta</option>
+               <option value="pink" style="font-weight:bold; color:pink;">pink</option>
+               <option value="white" style="font-weight:bold;">white</option>
+               <option value="lightGray" style="font-weight:bold; color:lightGray;">light gray</option>
+               <option value="gray" style="font-weight:bold; color:#A9A9A9;">gray</option>
+               <option value="darkGray" style="font-weight:bold; color:#696969;">dark gray</option>
+               <option value="black" style="font-weight:bold; color:black;">black</option>
+           </select></p>
 
-				<input type="text" name="name" value="${Parameters.getName()}"/></p>
+                           <div id="badge">
+                                           <aside style="float:right; width:50%;">
+                                           <p>Badge:</p>
+                                           </aside>
+                           </div>
+                           <p><label for="bgcolors">Select a background color:</label>
 
-                <p><label for="textcolors">Select a text & shape color:</label>
-                <select id="textcolors" name="textcolors">
-                    <option value="red" style="font-weight:bold; color:red;">red</option>
-                    <option value="orange" style="font-weight:bold; color:orange;">orange</option>
-                    <option value="yellow" style=" font-weight:bold; color:yellow;">yellow</option>
-                    <option value="green" style="font-weight:bold; color:green;">green</option>
-                    <option value="cyan" style="font-weight:bold; color:cyan;">cyan</option>
-                    <option value="blue" style="font-weight:bold; color:blue;">blue</option>
-                    <option value="magenta" style="font-weight:bold; color:magenta;">magenta</option>
-                    <option value="pink" style="font-weight:bold; color:pink;">pink</option>
-                    <option value="white" style="font-weight:bold;">white</option>
-                    <option value="lightGray" style="font-weight:bold; color:lightGray;">light gray</option>
-                    <option value="gray" style="font-weight:bold; color:#A9A9A9;">gray</option>
-                    <option value="darkGray" style="font-weight:bold; color:#696969;">dark gray</option>
-                    <option value="black" style="font-weight:bold; color:black;">black</option>
-                </select></p>
+           <select id="bgcolors" name="bgcolors">
 
+               <option value="red" style="font-weight:bold; color:red;">red</option>
+               <option value="orange" style="font-weight:bold; color:orange;">orange</option>
+               <option value="yellow" style=" font-weight:bold; color:yellow;">yellow</option>
+               <option value="green" style="font-weight:bold; color:green;">green</option>
+               <option value="cyan" selected="selected" style="font-weight:bold; color:cyan;">cyan</option>
+               <option value="blue" style="font-weight:bold; color:blue;">blue</option>
+               <option value="magenta" style="font-weight:bold; color:magenta;">magenta</option>
+               <option value="pink" style="font-weight:bold; color:pink;">pink</option>
+               <option value="white" style="font-weight:bold;">white</option>
+               <option value="lightGray" style="font-weight:bold;color:lightGray;">light gray</option>
+               <option value="gray" style="font-weight:bold; color:#A9A9A9;">gray</option>
+               <option value="darkGray" style="font-weight:bold; color:#696969;">dark gray</option>
+               <option value="black" style="font-weight:bold; color:black;">black</option>
+           </select></p>
+                   <br>
+                   <p><label for="shape">Choose a shape:</label></p>
+                   <p>	Rectangle: <input id="RECT" type="radio" name="shape" value="RECT"/>
+                           Rounded Rectangle: <input id="ROUNDRECT" type="radio" name="shape" value="ROUNDRECT"/>
+                           Oval: <input id="OVAL" type="radio" name="shape" value="OVAL"/></p>
 
-				<div id="badge">
-						<aside style="float:right; width:50%;">
-						<p>Badge:</p>
-						</aside>
-				</div>
-				<p><label for="bgcolors">Select a background color:</label>
-
-                <select id="bgcolors" name="bgcolors">
-
-                    <option value="red" style="font-weight:bold; color:red;">red</option>
-                    <option value="orange" style="font-weight:bold; color:orange;">orange</option>
-                    <option value="yellow" style=" font-weight:bold; color:yellow;">yellow</option>
-                    <option value="green" style="font-weight:bold; color:green;">green</option>
-                    <option value="cyan" selected="selected" style="font-weight:bold; color:cyan;">cyan</option>
-                    <option value="blue" style="font-weight:bold; color:blue;">blue</option>
-                    <option value="magenta" style="font-weight:bold; color:magenta;">magenta</option>
-                    <option value="pink" style="font-weight:bold; color:pink;">pink</option>
-                    <option value="white" style="font-weight:bold;">white</option>
-                    <option value="lightGray" style="font-weight:bold;color:lightGray;">light gray</option>
-                    <option value="gray" style="font-weight:bold; color:#A9A9A9;">gray</option>
-                    <option value="darkGray" style="font-weight:bold; color:#696969;">dark gray</option>
-                    <option value="black" style="font-weight:bold; color:black;">black</option>
-                </select></p>
-
-
-
-                        <br>
-                        <p><label for="shape">Choose a shape:</label></p>
-                        <p>	Rectangle: <input id="RECT" type="radio" name="shape" value="RECT"/>
-                                Rounded Rectangle: <input id="ROUNDRECT" type="radio" name="shape" value="ROUNDRECT"/>
-                                Oval: <input id="OVAL" type="radio" name="shape" value="OVAL"/></p>
-
-                        <p><label for="x">Enter desired shape width:</label>
-                        <input type="number" min="1" name="x" value="${Parameters.getStringX()}" /></p>
-                        <p><label for="y">Enter desired shape height:</label>
-                        <input type="number" min="1" name="y" value="${Parameters.getStringY()}" /></p>
+                   <p><label for="x">Enter desired shape width:</label>
+                   <input type="number" min="1" name="x" value="${Parameters.getStringX()}" /></p>
+                   <p><label for="y">Enter desired shape height:</label>
+                   <input type="number" min="1" name="y" value="${Parameters.getStringY()}" /></p>
 
 
-			<div id="right">
+                   <div id="right">
 
-			<aside style="float:right; width:50%;">
-                        <p id="error>
-                            <p><label for="error">Error Message:</label></p>
-                                <textarea id="errorMessage" rows="7" cols="50"> </textarea>
-                        </p>
-                        </aside>
-			</div>
+                   <aside style="float:right; width:50%;">
+                   <p id="error>
+                       <p><label for="error">Error Message:</label></p>
+                           <textarea id="errorMessage" rows="7" cols="50"> </textarea>
+                   </p>
+                   </aside>
+                   </div>
 
-                        <br>
-                        <p><label for="fstyle">Choose a font style:</label></p>
-                        <p><label for="plain">Plain:</label> <input id="REGULAR" type="radio" name="fstyle" value="REGULAR"/>
-                                <label for="bold" style="font-weight:bold">Bold:</label><input id="BOLD" type="radio" name="fstyle" value="BOLD"/>
-                                <label for="italic" style="font-style:italic;">Italic:</label> <input id="ITALIC" type="radio" name="fstyle" value="ITALIC"/>
-                                <label for="bold italic" style="font-weight:bold; font-style:italic;">Bold Italic:</label> <input id="BOLD ITALIC" type="radio" name="fstyle" value="BOLD ITALIC"/></p>
+                   <br>
+                   <p><label for="fstyle">Choose a font style:</label></p>
+                   <p><label for="plain">Plain:</label> <input id="REGULAR" type="radio" name="fstyle" value="REGULAR"/>
+                    <label for="bold" style="font-weight:bold">Bold:</label><input id="BOLD" type="radio" name="fstyle" value="BOLD"/>
+                    <label for="italic" style="font-style:italic;">Italic:</label> <input id="ITALIC" type="radio" name="fstyle" value="ITALIC"/>
+                    <label for="bold italic" style="font-weight:bold; font-style:italic;">Bold Italic:</label> <input id="BOLD ITALIC" type="radio" name="fstyle" value="BOLD ITALIC"/></p>
 
-                        <p><label for="ftsize">Enter desired font size:</label>
-                        <input type="number" min="1" name="ftsize" value="${Parameters.getFtsizeString()}" /></p>
+                   <p><label for="ftsize">Enter desired font size:</label>
+                   <input type="number" min="1" name="ftsize" value="${Parameters.getFtsizeString()}" /></p>
 
-                <p><input type="submit" value="Generate Badge" name="submit" /></p>
-			    </form>
+           <p><input type="submit" value="Generate Badge" name="submit" /></p>
+            </form>
         </div>
-
         
         <c:if test="${Parameters.getIsActive()}">
         <applet code="org.badge.applet.BadgeApplet" archive="BadgeApplet.jar" width="300" height="250">
